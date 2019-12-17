@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import AppBar from "material-ui/AppBar";
-import TextField from "material-ui/TextField";
-import RaiseButton from "material-ui/RaisedButton";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
-export class FormUserDetails extends Component {
+class FormUserDetails extends Component {
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
@@ -36,12 +36,13 @@ export class FormUserDetails extends Component {
             defaultValue={values.email}
           />
           <br />
-          <RaiseButton
-            label="Continue"
-            primary={true}
+          <Button
             style={styles.button}
             onClick={this.continue}
-          />
+            variant="contained"
+          >
+            Continue
+          </Button>
         </React.Fragment>
       </MuiThemeProvider>
     );

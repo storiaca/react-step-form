@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import AppBar from "material-ui/AppBar";
-import { List, ListItem } from "material-ui/List";
-import RaiseButton from "material-ui/RaisedButton";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import { List, ListItem } from "@material-ui/core/";
+import Button from "@material-ui/core/Button";
 
 export class Confirm extends Component {
   continue = e => {
@@ -41,19 +41,17 @@ export class Confirm extends Component {
             <ListItem primaryText="Bio" secondaryText={bio} />
           </List>
           <br />
-          <RaiseButton
-            label="Confirm & Continue"
-            primary={true}
+          <Button
             style={styles.button}
             onClick={this.continue}
-          />
+            variant="contained"
+          >
+            Confirm & Continue
+          </Button>
           <br />
-          <RaiseButton
-            label="Back"
-            primary={false}
-            style={styles.button}
-            onClick={this.back}
-          />
+          <Button style={styles.button} onClick={this.back} variant="contained">
+            Back
+          </Button>
         </React.Fragment>
       </MuiThemeProvider>
     );
